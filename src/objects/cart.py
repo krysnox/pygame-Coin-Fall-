@@ -36,12 +36,12 @@ class Cart(object):
                 try:
                     if not coin.collected:
                         if coin.type == Entity.BLUE_COIN:
-                            self.points += 3*self.game_manager.difficulty.value["SCORE_MULTIPLIER"]
+                            self.points += 3*self.game_manager.difficulty["SCORE_MULTIPLIER"]
                         elif coin.type == Entity.BOMB:
                             pygame.time.delay(500)
                             self.dead = True  # Replace quit with death
                         else:
-                            self.points += 1*self.game_manager.difficulty.value["SCORE_MULTIPLIER"]
+                            self.points += 1*self.game_manager.difficulty["SCORE_MULTIPLIER"]
 
                         coin.collect()
                 except AttributeError:

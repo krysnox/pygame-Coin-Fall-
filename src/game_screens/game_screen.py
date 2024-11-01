@@ -4,6 +4,7 @@ import math
 from pygame.locals import QUIT, KEYUP
 from src.game_screens.screen import Screen
 from src.misc.game_enums import Game_mode
+from src.misc.game_enums import Difficulty
 
 from src.objects.cart import Cart
 from src.objects.coin import Coin
@@ -59,7 +60,7 @@ class Game_screen(Screen):
         c = self.get_random_entity(self.i, self.res, self.size, self.surface)
         self.coinlist.append(c)
 
-        for b in self.coinlist[0:self.i:self.game_manager.difficulty.value["DENSITY"]]:                                   
+        for b in self.coinlist[0:self.i:self.game_manager.difficulty["DENSITY"]]:                                   
             # (use 14 or 15) this is for the rate at which
             # objects fall, can change this
             b.draw()
